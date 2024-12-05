@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.x  # Specifies the Python version
+      python: 3.11.3  # Specifies the Python version
     commands:
       - echo "Installing dependencies..."
       - pip install boto3 --quiet  # Install boto3 to interact with AWS services
