@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x  # Specifies the Python version
+    commands:
+      - echo "Installing dependencies..."
+      - pip install boto3 --quiet  # Install boto3 to interact with AWS services
+
+  pre_build:
+    commands:
+      - echo "Preparing to start SageMaker training job..."
+
+  build:
+    commands:
+      - echo "Executing SageMaker training job script..."
+      - python sagemaker_train.py  # Run the Python script to trigger the training job
+
+artifacts:
+  files:
+    - '**/*'  # You can specify the files you want to retain after the build is finished (optional)
+  discard-paths: yes
